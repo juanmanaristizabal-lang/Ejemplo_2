@@ -1,0 +1,25 @@
+using UnityEngine;
+
+public class ControllerScene1 : MonoBehaviour
+{
+
+    public Timer tiempoJuego;
+    
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void GetTimeScene() {
+ 
+        GameManager.Instance.TotalTime(tiempoJuego.StopTime);
+    }
+
+    
+}
