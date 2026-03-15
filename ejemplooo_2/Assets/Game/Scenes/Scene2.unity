@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368cac11c4ab50b43957c48049cb2767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerScene2
-  tiempoJuego: {fileID: 0}
+  tiempoJuego: {fileID: 1567684784}
 --- !u!4 &2045896476
 Transform:
   m_ObjectHideFlags: 0
@@ -538,6 +538,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5409292331445981982, guid: f87489b7b9f079241b8a120286039376, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630397801688995285, guid: f87489b7b9f079241b8a120286039376, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

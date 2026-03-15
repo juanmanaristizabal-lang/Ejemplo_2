@@ -4,10 +4,12 @@ public class ControllerScene1 : MonoBehaviour
 {
 
     public Timer tiempoJuego;
+
+
     
     void Start()
     {
-        
+        tiempoJuego.TimerStart();
     }
 
     // Update is called once per frame
