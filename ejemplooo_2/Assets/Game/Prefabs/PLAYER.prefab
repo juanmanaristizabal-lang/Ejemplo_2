@@ -142,7 +142,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -207,7 +207,7 @@ MonoBehaviour:
   speed: 1
   fuerzaSalto: 3
   groundCheck: {fileID: 1845634983825919797}
-  groundcheckRadius: 22
+  groundcheckRadius: 0.12
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
