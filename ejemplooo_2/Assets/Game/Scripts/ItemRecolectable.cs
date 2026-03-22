@@ -17,6 +17,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 
-   
-   
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameManager.Instance.TotalItem(_itemData);
+            Debug.Log($"Recolectaste un {_itemData.itemType} con valor de {_itemData.ItemValue}");
+            Destroy(gameObject);
+        }
+    }
+
+
 }

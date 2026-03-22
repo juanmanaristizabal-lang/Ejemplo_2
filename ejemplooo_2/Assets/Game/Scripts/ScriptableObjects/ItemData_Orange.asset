@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f32b86e89130cc04ca01d4e4b7f99369, type: 3}
-  m_Name: Orange
+  m_Name: ItemData_Orange
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: 
-  itemType: 0
-  ItemValue: 0
+  itemName: ItemOrange
+  itemType: 1
+  ItemValue: 10

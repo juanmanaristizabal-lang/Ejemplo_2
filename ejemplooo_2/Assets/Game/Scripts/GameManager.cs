@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 
     private float globalTime;
 
+    private int totalApple = 0;
+    private int totalOrange = 0;    
+
     
 
     void Awake()
@@ -40,6 +43,21 @@ public class GameManager : MonoBehaviour
         globalTime += timeScene;
     }
 
-    public float GlobalTime { get => globalTime; set => globalTime = value; }
+    public void TotalItem(ItemData item)
+    {
+        switch(item.itemType)
+        {
+            case ItemType.Apple:
+                totalApple += item.ItemValue;
+                break;
+            case ItemType.Orange:
+                totalOrange += item.ItemValue;
+                break;
+        }
+    }
+    
 
+    public float GlobalTime { get => globalTime; set => globalTime = value; }
+    public int TotalApple { get => totalApple; set => totalApple = value; }
+    public int TotalOrange { get => totalOrange; set => totalOrange = value; }
 }
