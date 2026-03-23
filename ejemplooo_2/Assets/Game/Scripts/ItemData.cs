@@ -9,6 +9,9 @@ public class ItemData : ScriptableObject
     public ItemType itemType;
     public int ItemValue;
 
+    [Header("Sonido")]
+    public AudioClip collectSound;
+
 }
 
 public enum ItemType

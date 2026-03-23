@@ -11,7 +11,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,6 +20,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(_itemData != null)
+                AudioSource.PlayClipAtPoint(_itemData.collectSound, transform.position);
+
             GameManager.Instance.TotalItem(_itemData);
             Debug.Log($"Recolectaste un {_itemData.itemType} con valor de {_itemData.ItemValue}");
             Destroy(gameObject);
