@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour
     private float globalTime;
 
     private int totalApple = 0;
-    private int totalOrange = 0;    
+    private int totalOrange = 0;
+    private int totalKiwi = 0;
+    private int totalBanana = 0;
 
-    
+
+
+
 
     void Awake()
     {
@@ -53,6 +57,14 @@ public class GameManager : MonoBehaviour
             case ItemType.Orange:
                 totalOrange += item.ItemValue;
                 break;
+            case ItemType.Kiwi:
+                totalKiwi += item.ItemValue;
+                break;
+            case ItemType.Banana:
+               totalBanana += item.ItemValue;
+                break;
+
+
         }
     }
     
@@ -60,4 +72,6 @@ public class GameManager : MonoBehaviour
     public float GlobalTime { get => globalTime; set => globalTime = value; }
     public int TotalApple { get => totalApple; set => totalApple = value; }
     public int TotalOrange { get => totalOrange; set => totalOrange = value; }
+    public int TotalKiwi { get => totalKiwi; set => totalKiwi = value; }
+    public int TotalBanana { get => totalBanana; set => totalBanana = value; }
 }

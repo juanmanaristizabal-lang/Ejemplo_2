@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: ItemApple
   itemType: 0
   ItemValue: 5
+  collectSound: {fileID: 8300000, guid: c66101db16620a44084a899254cc1a10, type: 3}

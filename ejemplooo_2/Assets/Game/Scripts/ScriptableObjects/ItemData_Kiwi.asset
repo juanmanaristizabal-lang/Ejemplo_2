@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: 
   itemType: 2
   ItemValue: 20
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: e37d0d02246b67f40817816d045e4a8e, type: 3}

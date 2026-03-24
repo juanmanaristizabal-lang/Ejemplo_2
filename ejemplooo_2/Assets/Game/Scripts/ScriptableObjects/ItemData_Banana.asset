@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f32b86e89130cc04ca01d4e4b7f99369, type: 3}
-  m_Name: ItemData_Orange
+  m_Name: ItemData_Banana
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: ItemOrange
-  itemType: 1
-  ItemValue: 10
-  collectSound: {fileID: 8300000, guid: ed85ba8a06d42984f9b4e306b7524ae5, type: 3}
+  itemName: 
+  itemType: 3
+  ItemValue: 20
+  collectSound: {fileID: 8300000, guid: f16ea2701a83baa4593059e51237dd55, type: 3}

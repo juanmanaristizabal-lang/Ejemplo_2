@@ -8,6 +8,8 @@ public class ControllerScene1 : MonoBehaviour
 
     public TextMeshProUGUI txtCountApple;
     public TextMeshProUGUI txtCountOrange;
+    public TextMeshProUGUI txtCountKiwi;
+    public TextMeshProUGUI txtCountBanana;
 
 
 
@@ -31,6 +33,8 @@ public class ControllerScene1 : MonoBehaviour
     {
         txtCountApple.text  =  GameManager.Instance.TotalApple.ToString();
         txtCountOrange.text =  GameManager.Instance.TotalOrange.ToString();
+        txtCountKiwi.text   =  GameManager.Instance.TotalKiwi.ToString();
+        txtCountBanana.text =  GameManager.Instance.TotalBanana.ToString();
     }
 
     
