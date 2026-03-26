@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 839060686221652418}
   - component: {fileID: 4945180405672510559}
   - component: {fileID: 8814734845589599882}
-  - component: {fileID: 9131388753807454661}
+  - component: {fileID: 4014495269651545626}
   m_Layer: 0
   m_Name: Apple_0
   m_TagString: Untagged
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &9131388753807454661
+--- !u!114 &4014495269651545626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd2c7f2d23a2c149946a65410256c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  _itemData: {fileID: 11400000, guid: 9c9c79eaa3c7a214b8e352e2789c84b0, type: 2}
+  itemType: Apple
+  collectSound: {fileID: 8300000, guid: 1d932842b1b41584f919889a857c3e10, type: 3}

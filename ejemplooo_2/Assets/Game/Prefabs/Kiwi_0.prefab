@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd2c7f2d23a2c149946a65410256c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  _itemData: {fileID: 11400000, guid: e05fc07d21a995c4196e04833446fb61, type: 2}
+  itemType: Kiwi
+  collectSound: {fileID: 8300000, guid: 6326505eb846da841a18c010f89dcb5a, type: 3}

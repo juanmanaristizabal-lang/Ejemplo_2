@@ -1,33 +1,34 @@
-using System;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ItemRecolectable : MonoBehaviour
 {
+    [Header("Tipo de item")]
+    [SerializeField] private string itemType;
 
-    [SerializeField] private ItemData _itemData;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [Header("Sonido")]
+    [SerializeField] private AudioClip collectSound;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if(_itemData != null)
-                AudioSource.PlayClipAtPoint(_itemData.collectSound, transform.position);
+            ItemDataJson data = JsonLoader.Instance.GetItem(itemType);
 
-            GameManager.Instance.TotalItem(_itemData);
-            Debug.Log($"Recolectaste un {_itemData.itemType} con valor de {_itemData.ItemValue}");
+            if (data != null)
+            {
+                if (collectSound != null)
+                    AudioSource.PlayClipAtPoint(collectSound, transform.position);
+
+                GameManager.Instance.TotalItemJson(data);
+
+                Debug.Log($"Recolectaste un {data.nombre} con valor {data.valor}");
+            }
+            else
+            {
+                Debug.LogError($"No se encontró el item '{itemType}' en el JSON");
+            }
+
             Destroy(gameObject);
         }
     }
-
-
 }

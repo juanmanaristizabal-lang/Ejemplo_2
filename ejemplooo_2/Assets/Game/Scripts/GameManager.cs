@@ -47,27 +47,25 @@ public class GameManager : MonoBehaviour
         globalTime += timeScene;
     }
 
-    public void TotalItem(ItemData item)
+    public void TotalItemJson(ItemDataJson item)
     {
-        switch(item.itemType)
+        switch (item.nombre)
         {
-            case ItemType.Apple:
-                totalApple += item.ItemValue;
+            case "Apple":
+                totalApple += item.valor;
                 break;
-            case ItemType.Orange:
-                totalOrange += item.ItemValue;
+            case "Orange":
+                totalOrange += item.valor;
                 break;
-            case ItemType.Kiwi:
-                totalKiwi += item.ItemValue;
+            case "Kiwi":
+                totalKiwi += item.valor;
                 break;
-            case ItemType.Banana:
-               totalBanana += item.ItemValue;
+            case "Banana":
+                totalBanana += item.valor;
                 break;
-
-
         }
     }
-    
+
 
     public float GlobalTime { get => globalTime; set => globalTime = value; }
     public int TotalApple { get => totalApple; set => totalApple = value; }

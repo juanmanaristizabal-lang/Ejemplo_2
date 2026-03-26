@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd2c7f2d23a2c149946a65410256c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  _itemData: {fileID: 11400000, guid: ed0124b98fbbfc8489f491ed77e0c21f, type: 2}
+  itemType: Banana
+  collectSound: {fileID: 8300000, guid: ade0cf23c14e8a2429da4266b7ee239b, type: 3}

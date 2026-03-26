@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd2c7f2d23a2c149946a65410256c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  _itemData: {fileID: 11400000, guid: 3b391289f1240d04795192a085cc8091, type: 2}
+  itemType: Orange
+  collectSound: {fileID: 8300000, guid: f16ea2701a83baa4593059e51237dd55, type: 3}
