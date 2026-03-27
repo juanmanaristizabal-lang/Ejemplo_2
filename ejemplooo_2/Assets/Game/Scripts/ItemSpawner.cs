@@ -1,57 +1,38 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ItemSpawner : MonoBehaviour
 {
+    [Header("Prefab genérico")]
+    [SerializeField] private GameObject itemPrefab;
 
-
-    [Header("Items Prefabs")]
-    [SerializeField] private GameObject applePrefab;
-    [SerializeField] private GameObject orangePrefab;
-    [SerializeField] private GameObject bananaPrefab;
-    [SerializeField] private GameObject kiwiPrefab;
-
-    [Header("Cantidad a instanciar")]
-    [SerializeField] private int appleCount = 3;
-    [SerializeField] private int orangeCount = 2;
-    [SerializeField] private int kiwiCount = 3;
-    [SerializeField] private int bananaCount = 2;
-
-    [Header("Área de spawn")]
-    [SerializeField] private float areaWidth = 10f;   
-    [SerializeField] private float areaHeight = 5f;
-    
+    [Header("Puntos de spawn")]
+    [SerializeField] private List<Transform> spawnPoints;
 
     void Start()
     {
-        SpawnItems(applePrefab, appleCount);
-        SpawnItems(orangePrefab, orangeCount);
-        SpawnItems(kiwiPrefab, kiwiCount);
-        SpawnItems(bananaPrefab, bananaCount);
-
+        SpawnItems();
     }
 
-    private void SpawnItems(GameObject prefab, int count)
+    private void SpawnItems()
     {
-        for (int i = 0; i < count; i++)
+        if (itemPrefab == null || spawnPoints.Count == 0) return;
+
+        List<ItemDataJson> coleccionables = JsonLoader.Instance.coleccionables;
+
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
-            float randomX = Random.Range(-areaWidth / 2, areaWidth / 2);
-            float randomY = Random.Range(-areaHeight / 2, areaHeight / 2);
-            Vector3 spawnPosicio = transform.position + new Vector3(randomX, randomY, 0);
+            ItemDataJson data = coleccionables[Random.Range(0, coleccionables.Count)];
 
-            Instantiate(prefab, spawnPosicio, Quaternion.identity);
+            GameObject obj = Instantiate(itemPrefab, spawnPoints[i].position, Quaternion.identity);
+
+            obj.GetComponent<ItemRecolectable>().SetItemNombre(data.nombre);
         }
-
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green; 
-        Gizmos.DrawWireCube(transform.position, new Vector3(areaWidth, areaHeight, 0));
-    }
 
-    
-    void Update()
+
+void Update()
     {
         
     }

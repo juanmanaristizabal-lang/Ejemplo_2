@@ -1,13 +1,45 @@
 {
   "coleccionables": [
-    {"nombre": "Apple",  "rareza": "Comun",       "valor": 20},
-    {"nombre": "Orange", "rareza": "Poco Comun",  "valor": 2},
-    {"nombre": "Kiwi",   "rareza": "Raro",        "valor": 3},
-    {"nombre": "Banana", "rareza": "Epico",       "valor": 4}
+    {
+      "nombre": "Apple",
+      "rareza": "Comun",
+      "valor": 1,
+      "imagen": "Apple"
+    },
+    {
+      "nombre": "Orange",
+      "rareza": "Poco Comun",
+      "valor": 2,
+      "imagen": "Orange"
+    },
+    {
+      "nombre": "Kiwi",
+      "rareza": "Raro",
+      "valor": 3,
+      "imagen": "Kiwi"
+    },
+    {
+      "nombre": "Banana",
+      "rareza": "Epico",
+      "valor": 4,
+      "imagen": "Banana"
+    }
   ],
   "misiones": [
-    {"id": 1, "titulo": "Recolector",  "descripcion": "Recolecta todas las frutas del nivel."},
-    {"id": 2, "titulo": "Velocista",   "descripcion": "Completa el nivel en menos de 60 segundos."},
-    {"id": 3, "titulo": "Explorador",  "descripcion": "Visita todas las plataformas del nivel."}
+    {
+      "id": 1,
+      "titulo": "Recolector",
+      "descripcion": "Recolecta todas las frutas del nivel."
+    },
+    {
+      "id": 2,
+      "titulo": "Velocista",
+      "descripcion": "Completa el nivel en menos de 60 segundos."
+    },
+    {
+      "id": 3,
+      "titulo": "Explorador",
+      "descripcion": "Visita todas las plataformas del nivel."
+    }
   ]
 }
