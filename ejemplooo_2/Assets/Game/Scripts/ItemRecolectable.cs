@@ -19,11 +19,11 @@ public class ItemRecolectable : MonoBehaviour
 
         if (data != null)
         {
-            Sprite sprite = Resources.Load<Sprite>(data.imagen);
+            Sprite sprite = Resources.Load<Sprite>(data.iconoId);
             if (sprite != null)
                 GetComponent<SpriteRenderer>().sprite = sprite;
             else
-                Debug.LogError($"No se encontró el sprite '{data.imagen}' en Resources");
+                Debug.LogError($"No se encontró el sprite '{data.iconoId}' en Resources");
         }
         else
         {
