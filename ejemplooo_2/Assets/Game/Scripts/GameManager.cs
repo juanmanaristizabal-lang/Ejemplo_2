@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,15 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private float globalTime;
+    private int totalFrutas;
 
-    private int totalApple = 0;
-    private int totalOrange = 0;
-    private int totalKiwi = 0;
-    private int totalBanana = 0;
+    private Dictionary<string,int> conteoFrutas = new Dictionary<string, int>();
 
-
-
-
+    public float GlobalTime { get => globalTime; set => globalTime = value; }
+    public int TotalFrutas { get => totalFrutas; set => totalFrutas = value; }
 
     void Awake()
     {
@@ -34,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         globalTime = 0;
+        totalFrutas = 0;
     }
 
   
@@ -49,27 +48,30 @@ public class GameManager : MonoBehaviour
 
     public void TotalItemJson(ItemDataJson item)
     {
-        switch (item.nombre)
+        totalFrutas++;
+        if(conteoFrutas.ContainsKey(item.Nombre))
         {
-            case "Apple":
-                totalApple += item.valor;
-                break;
-            case "Orange":
-                totalOrange += item.valor;
-                break;
-            case "Kiwi":
-                totalKiwi += item.valor;
-                break;
-            case "Banana":
-                totalBanana += item.valor;
-                break;
+            conteoFrutas[item.Nombre]+=1;
+        }
+        else
+        {
+            conteoFrutas[item.Nombre] = 1;
         }
     }
 
 
-    public float GlobalTime { get => globalTime; set => globalTime = value; }
-    public int TotalApple { get => totalApple; set => totalApple = value; }
-    public int TotalOrange { get => totalOrange; set => totalOrange = value; }
-    public int TotalKiwi { get => totalKiwi; set => totalKiwi = value; }
-    public int TotalBanana { get => totalBanana; set => totalBanana = value; }
+    public int GetConteo(string nombre)
+    {
+        if(conteoFrutas.ContainsKey(nombre))
+            return conteoFrutas[nombre];
+        return 0;
+    }
+
+    public void ResetConteo()
+    {
+        conteoFrutas.Clear();
+        totalFrutas=0;
+    }
+
+   
 }

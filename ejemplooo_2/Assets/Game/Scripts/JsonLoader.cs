@@ -49,7 +49,10 @@ public class JsonLoader : MonoBehaviour
         return coleccionables.Find(i => string.Equals(i.nombre, nombre, System.StringComparison.OrdinalIgnoreCase));
     }
 
-
+    public MissionData GetMission(int id)
+    {
+        return misiones.Find(m => m.id == id);
+    }
 
 
 
