@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361341310989155378}
-  - component: {fileID: 3340915717504885537}
+  - component: {fileID: 5175045196372068517}
   m_Layer: 0
   m_Name: JsonLoader
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3340915717504885537
+--- !u!114 &5175045196372068517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,6 +43,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3f100c8b3f82614886ecaf6f59ee114, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadJson
+  m_EditorClassIdentifier: Assembly-CSharp::JsonLoader
   coleccionables: []
   misiones: []

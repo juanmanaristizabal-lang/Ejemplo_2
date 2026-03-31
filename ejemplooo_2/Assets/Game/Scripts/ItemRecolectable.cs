@@ -43,6 +43,11 @@ public class ItemRecolectable : MonoBehaviour
                     AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
                 GameManager.Instance.TotalItemJson(data);
+
+                UI_ManagerScene1 ui = FindFirstObjectByType<UI_ManagerScene1>();
+                if (ui != null)
+                    ui.MostrarNotificacion(data.nombre, data.valor);
+
                 Debug.Log($"Recolectaste un {data.nombre} con valor {data.valor}");
             }
 

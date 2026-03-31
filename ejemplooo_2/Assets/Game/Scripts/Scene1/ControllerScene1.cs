@@ -1,41 +1,51 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class ControllerScene1 : MonoBehaviour
 {
 
-    public Timer tiempoJuego;
+    [Header("Timer")]
+    [SerializeField] private Timer tiempoJuego;
 
-    public TextMeshProUGUI txtCountApple;
-    public TextMeshProUGUI txtCountOrange;
-    public TextMeshProUGUI txtCountKiwi;
-    public TextMeshProUGUI txtCountBanana;
+    [Header("UI Manager")]
+    [SerializeField] private UI_ManagerScene1 uiManager;
 
-
+    private const int frutasParaAvanzar = 5;
+    private bool escenaCargada = false;
 
     void Start()
     {
-        tiempoJuego.TimerStart();
+        uiManager.ActualizarConteoFrutas();
+        verificarAvance(); 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        GetTotalItem();
+        uiManager.ActualizarConteoFrutas();
+            verificarAvance();
     }
 
-    public void GetTimeScene() {
- 
+    public void GetTimeScene()
+    {
+        tiempoJuego.TimerStop();
         GameManager.Instance.TotalTime(tiempoJuego.StopTime);
     }
 
-    public void GetTotalItem()
+    private void verificarAvance()
     {
-        txtCountApple.text  =  GameManager.Instance.TotalApple.ToString();
-        txtCountOrange.text =  GameManager.Instance.TotalOrange.ToString();
-        txtCountKiwi.text   =  GameManager.Instance.TotalKiwi.ToString();
-        txtCountBanana.text =  GameManager.Instance.TotalBanana.ToString();
-    }
+        if (escenaCargada) return;
 
-    
+        if (GameManager.Instance.TotalFrutas >= frutasParaAvanzar)
+        {
+            escenaCargada=true;
+            GetTimeScene(); 
+            SceneManager.LoadScene("Scene2");
+        }
+
+
+        
+
+    }
 }
