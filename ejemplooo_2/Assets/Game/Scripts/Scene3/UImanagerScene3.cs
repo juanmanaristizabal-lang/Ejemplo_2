@@ -18,8 +18,18 @@ public class UImanagerScene3 : MonoBehaviour
 
 
     public void VolverAlMenu() {
-        SceneManager.LoadScene("Menu_Intro"); 
+        SceneManager.LoadScene("Menu_Intro");
+        GameManager.Instance.GlobalTime = 0; 
+        SceneManager.LoadScene("Menu_Intro");
     }
+
+
+    public void salir() {
+    
+    Application.Quit();
+        Debug.Log("Salir del juego"); 
+    }
+
 
     // Update is called once per frame
     void Update()

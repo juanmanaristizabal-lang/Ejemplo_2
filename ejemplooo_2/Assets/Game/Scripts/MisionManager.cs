@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class MissionManager : MonoBehaviour
 {
     public static MissionManager Instance;
+
+    [Header("Spawner")]
+    [SerializeField] private ItemSpawner itemSpawner;
 
     private MissionData misionActual;
     private int misionIndex = 1;
@@ -32,15 +34,18 @@ public class MissionManager : MonoBehaviour
         misionActual = JsonLoader.Instance.GetMision(id);
         misionCompletada = false;
 
-        if (misionActual is not null)
+        if (misionActual != null)
+        {
             Debug.Log("Mision cargada: " + misionActual.titulo);
+            itemSpawner.SpawnParaMision(misionActual);
+        }
         else
             Debug.LogError("No se encontro la mision con id: " + id);
     }
 
     void Update()
     {
-        if (misionActual is null || misionCompletada) return;
+        if (misionActual == null || misionCompletada) return;
         VerificarMision();
     }
 
@@ -67,6 +72,7 @@ public class MissionManager : MonoBehaviour
         {
             misionIndex++;
             GameManager.Instance.ResetConteo();
+            itemSpawner.LimpiarFrutas();
             CargarMision(misionIndex);
 
             if (ui != null)
@@ -76,6 +82,10 @@ public class MissionManager : MonoBehaviour
         {
             if (ui != null)
                 ui.MostrarVictoria();
+
+            ControllerScene2 controller = FindFirstObjectByType<ControllerScene2>();
+            if (controller != null)
+                controller.GetTimeScene();
 
             Invoke("IrAScene3", 2f);
         }
@@ -91,5 +101,3 @@ public class MissionManager : MonoBehaviour
         SceneManager.LoadScene("Scene3");
     }
 }
-
-
