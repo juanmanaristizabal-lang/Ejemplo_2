@@ -18,8 +18,7 @@ public class UImanagerScene3 : MonoBehaviour
 
 
     public void VolverAlMenu() {
-        SceneManager.LoadScene("Menu_Intro");
-        GameManager.Instance.GlobalTime = 0; 
+        GameManager.Instance.ResetJuegoCompleto();
         SceneManager.LoadScene("Menu_Intro");
     }
 

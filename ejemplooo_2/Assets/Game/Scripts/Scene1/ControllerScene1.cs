@@ -12,7 +12,7 @@ public class ControllerScene1 : MonoBehaviour
     [Header("UI Manager")]
     [SerializeField] private UI_ManagerScene1 uiManager;
 
-    private const int frutasParaAvanzar = 5;
+    private const int frutasParaAvanzar = 6;
     private bool escenaCargada = false;
 
     void Start()

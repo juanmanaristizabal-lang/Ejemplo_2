@@ -73,5 +73,13 @@ public class GameManager : MonoBehaviour
         totalFrutas=0;
     }
 
+    public void ResetJuegoCompleto()
+    {
+        conteoFrutas.Clear();
+        totalFrutas=0;
+        globalTime=0;
+    }
+
+
    
 }
